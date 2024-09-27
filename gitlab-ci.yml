@@ -1,0 +1,11 @@
+stages:
+  - deploy
+
+deploy:
+  image: alpine:latest
+  stage: deploy
+  script:
+    - mkdir public || true
+    - cp -r ./root/* public/
+  only:
+    - main
